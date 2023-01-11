@@ -1,0 +1,18 @@
+<h1>Détails</h1>
+
+<div *ngIf="product">
+  <mat-card class="custom-card">
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-content>
+      Nous Sommes bien la page de détails du produit {{ product.name }}
+      <p>{{ product.description }}</p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-footer style="padding-left:1rem">
+      {{product.price | currency:'EUR'}}
+      <button mat-icon-button color="primary">
+        <mat-icon (click)="addToShoppingList(product)">add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-footer>
+  </mat-card>
+</div>

@@ -1,0 +1,84 @@
+<form autocomplete="on" (ngSubmit)="onSubmit()" [formGroup]="formgroup"
+  style="margin: 5em; width:55em; display: flex; flex-wrap: wrap;">
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>Nom</mat-label>
+      <input onlyLetter matInput formControlName="name" name="name">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>Prénom</mat-label>
+      <input onlyLetter matInput formControlName="firstName" name="firstName">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>Adresse</mat-label>
+      <input matInput formControlName="address" name="address">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>Code postal</mat-label>
+      <input specificNumberDigit size="5" matInput formControlName="zipCode" name="zipCode">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>Ville</mat-label>
+      <input onlyLetter matInput formControlName="city" name="city">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>Pays</mat-label>
+      <select formControlName="country" matNativeControl (change)="changeCountry($event)" name="country">
+        <option value="France">France</option>
+      </select>
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>tel</mat-label>
+      <input specificNumberDigit size="10" matInput formControlName="phone" name="phone">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>email</mat-label>
+      <input matInput formControlName="email" name="email">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>Civilité</mat-label>
+      <select formControlName="gender" matNativeControl (change)="change($event)" name="gender">
+        <option value="Monsieur">Monsieur</option>
+        <option value="Madame">Madame</option>
+        <option value="Autres">Autres</option>
+      </select>
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>identifiant</mat-label>
+      <input matInput formControlName="login" name="login">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>mot de passe</mat-label>
+      <input matInput formControlName="password" name="password" type="password">
+    </mat-form-field>
+  </p>
+  <p style="margin:2em;">
+    <mat-form-field appearance="legacy">
+      <mat-label>validation mot de passe</mat-label>
+      <input formControlName="passwordValidation" matInput name="passwordValidation" type="password">
+    </mat-form-field>
+  </p>
+  <p style='margin-bottom: 5em;'>
+    <button mat-stroked-button type="submit">Submit</button>
+  </p>
+</form>

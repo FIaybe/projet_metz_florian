@@ -1,0 +1,26 @@
+<div class="flex">
+  <form [formGroup]="formgroup" (ngSubmit)="onSubmit()">
+    <mat-card class="card">
+      <mat-card-title>Connexion</mat-card-title>
+      <mat-card-content>
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Identifiant</mat-label>
+            <input matInput placeholder="myFantatsicLogin" formControlName="login">
+            <mat-hint *ngIf="hint">try : admin@admin.fr</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Mot de passe</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-hint *ngIf="hint">try : admin</mat-hint>
+          </mat-form-field>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button type="submit">Se connecter</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

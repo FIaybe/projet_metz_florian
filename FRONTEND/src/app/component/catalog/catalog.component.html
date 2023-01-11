@@ -1,0 +1,29 @@
+<div>
+  <h1>Catalogue</h1>
+  <a mat-button [routerLink]="'add'">Ajouter</a>
+
+  <div class="form-group">
+    <label for="product-search">Recherche d'un produit :</label>
+    <app-search-bar [list]="products" (filterReset)="getProducts()"
+      (filterResult)="filterResult($event)"></app-search-bar>
+  </div>
+  <div *ngIf="products" class="flex">
+    <div *ngFor="let product of products">
+      <mat-card class="custom-card">
+        <a [routerLink]="['/detail', product.id]">
+          <mat-card-title>{{product.name}}</mat-card-title>
+        </a>
+        <mat-card-content>
+          <p>{{ product.description }}</p>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-footer style="padding-left:1rem">
+          {{product.price | currency:'EUR'}}
+          <button mat-icon-button color="primary">
+            <mat-icon (click)="addToShoppingList(product)">add_shopping_cart</mat-icon>
+          </button>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>
