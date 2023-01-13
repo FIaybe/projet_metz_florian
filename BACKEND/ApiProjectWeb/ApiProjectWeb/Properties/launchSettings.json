@@ -1,0 +1,16 @@
+﻿{
+  "profiles": {
+    "ApiProjectWeb": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "windowsAuthentication": true,
+      "anonymousAuthentication": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:5000;http://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
